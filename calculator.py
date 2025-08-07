@@ -16,7 +16,8 @@ class Calculator:
         self.master = master
         master.title("Advanced Python Calculator 🚀 - FrenzyPenguin Media")
         master.resizable(False, False)
-        
+        master.iconbitmap('calculator.ico')  # Set the window icon
+
         # Set a dark theme for a sleek, modern look
         self.bg_color = "#282a36"  # Dark gray
         self.fg_color = "#f8f8f2"  # Light off-white
