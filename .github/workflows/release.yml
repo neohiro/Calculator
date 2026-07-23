@@ -45,19 +45,19 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           pyinstaller --noconfirm --onedir --windowed --icon=calculator.ico calculator.py
-          Compress-Archive -Path "dist\calculator\*" -DestinationPath "Calculator-Windows.zip" -Force
+          Compress-Archive -Path "dist\calculator" -DestinationPath "Calculator-Windows.zip" -Force
 
       - name: Build macOS Executable
         if: matrix.os == 'macos-latest'
         run: |
-          pyinstaller --noconfirm --onedir --windowed --icon=calculator.ico calculator.py
+          pyinstaller --noconfirm --onedir --windowed --icon=calculator.icns calculator.py
           cd dist
           zip -r ../Calculator-macOS.zip calculator.app
 
       - name: Build Linux Executable
         if: matrix.os == 'ubuntu-latest'
         run: |
-          pyinstaller --noconfirm --onedir --windowed --icon=calculator.ico calculator.py
+          pyinstaller --noconfirm --onedir --windowed --icon=calculator.png calculator.py
           cd dist
           zip -r ../Calculator-Linux.zip calculator
 
